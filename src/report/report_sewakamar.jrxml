@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c88d584e-a13c-493e-9446-1b8a4cd539e3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select a.*, b.*,c.*,d.*
+from tamu a, sewa b, sewadetil c, kamar d
+where a.kdtamu=b.kdtamu
+and b.nosewa=c.nosewa
+and c.nmkamar=d.nmkamar
+order by kdkamar]]>
+	</queryString>
+	<field name="KdTamu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NmTamu" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Jenkel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Pendidikan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Pekerjaan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NoSewa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TglSewa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NmKamar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Lama" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Biaya" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KdKamar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Jenis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="147" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="262" height="36" uuid="3c42dc09-d125-44dc-90f8-fb30a92ddaf0"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOTEL SANCTUARY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="36" width="227" height="23" uuid="568a953c-5c45-4551-b447-afd37cf0f773"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Bringing the Comfort of Home]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="82" width="157" height="26" uuid="5aa8c8a4-6a58-4283-b9e5-733d73417dcb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[KWITANSI SEWA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="204" y="108" width="157" height="31" uuid="44c4251c-23cb-4f15-b863-8027eee41262"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NoSewa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="149" height="20" uuid="1c488248-7f08-4ef5-ae9f-dd25a2b3a338"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal Sewa : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="20" width="100" height="20" uuid="216e6975-c6a0-4e90-842d-2739b167e1af"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TglSewa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="227" y="0" width="83" height="20" uuid="06785778-747d-4ce5-83dd-e628db218cca"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[a/n                :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="20" width="83" height="20" uuid="ab55f067-d517-45cc-b20c-cffcf2cc2e39"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jenkel           :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="310" y="0" width="239" height="20" uuid="085616ca-839d-4839-ad24-621be6a5b4b0"/>
+				<textFieldExpression><![CDATA[$F{NmTamu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="20" width="123" height="20" uuid="14056e0d-90da-401b-993d-f81ad856ce2f"/>
+				<textFieldExpression><![CDATA[$F{Jenkel}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="31" height="29" uuid="bd45713f-c763-4d8d-8d0c-92b5f9fa2a82"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="0" width="141" height="29" uuid="64da7147-7c76-495f-88b2-bb76dab57a9f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jenis Kamar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="0" width="138" height="29" uuid="c4c4f901-4bf3-4366-9bc2-bd4c57c16bcb"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Lama Sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="0" width="245" height="29" uuid="f37c3f44-9a5f-4e8e-b361-ef372b5f1ca2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Biaya]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="31" height="30" uuid="11b80a1f-4d87-462b-8a32-6a24a5a57706"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="0" width="141" height="30" uuid="90231b9c-47c3-4ac4-a15b-f7b2024db930"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Jenis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="0" width="138" height="30" uuid="cd5be565-0e1e-4d69-8fc3-090548c7fc04"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Lama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="245" height="30" uuid="bd8f88f8-34b7-4ced-a1ed-561e3c98c864"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Biaya}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="17" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="15" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="333" y="16" width="100" height="36" uuid="cfade5b1-07bf-41b9-87d0-4d8f80918f16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Biaya :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="433" y="16" width="116" height="36" uuid="34315f65-6519-4a04-bd22-40e671466695"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
